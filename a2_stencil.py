@@ -1,60 +1,67 @@
-import sqlite3
+import MySQLdb
 
 class DbStreamer:
 
-	@staticmethod
-	def jsonify_data(data):
-		json_data = []
-		
-		for result in data:
-			json_data.append(dict(zip(row_headers, result)))
-		
-		# print(json_data, end="\n\n")
-		return json_data
+    @staticmethod
+    def get_rows(data):
+        data_rows = []
+        for row in data:
+            data_rows.append(row)
+        return data_rows
 
 
-	def __init__(self, host, user, password, database):
-		# TODO: Create the connection by replacing None with appropriate code.
-		self.conn = None 
-		
-		# Do not modify code in this definition below this line.
-		_cursor = self.conn.cursor()
-		# When using SQLite, include the following line to ensure foreign key commands are recognized
-		_cursor.execute('PRAGMA foreign_keys = ON')
-		
-		return self.conn
+    def __init__(self, host, user, password, database):
+        # TODO: Create the connection by replacing None with appropriate code.
+        #self.conn = None
+        self.conn = MySQLdb.Connection(host=host,
+                                       user=user,
+                                       passwd=password,
+                                       db=database,
+                                       charset="utf8",
+                                       use_unicode=True)
+        
+        # Do not modify code in this definition below this line.
+        _cursor = self.conn.cursor()
+        return
 
-	def get_connection(self):
-		return self.conn
+    def get_connection(self):
+        return self.conn
 
-	def close_connection(self):
-		self.conn.commit()
-		self.conn.close()
-		return
-	
-	def get_tables(self):
-		sql = "SHOW TABLES;"
-		
-		_cursor = self.conn.cursor()
-		_cursor.execute(sql)
-		data = _cursor.fetchall()
+    def close_connection(self):
+        self.conn.commit()
+        self.conn.close()
+        return
+    
+    def get_tables(self):
+        sql = "SHOW TABLES;"
+        
+        _cursor = self.conn.cursor()
+        _cursor.execute(sql)
+        data = _cursor.fetchall()
 
-		return data
+        return data
 
-	# TODO: Add your logic for each of the questions in the corresponding methods provided below.
-	def q1(self):
-		_cursor = self.conn.cursor()
+    def q0(self):
+        sql = "SELECT DATE('2020-01-23');"
+        _cursor = self.conn.cursor()
+        _cursor.execute(sql)
+        data = _cursor.fetchall()
+        return data
 
-		# TODO: Add logic here
-		# ------------------------------------------------------------------------------------
+    # TODO: Add your logic for each of the questions in the corresponding methods provided below.
+    def q1(self):
+        _cursor = self.conn.cursor()
+
+        # TODO: Add logic here
+        # ------------------------------------------------------------------------------------
 
 
 
-		# ------------------------------------------------------------------------------------
-		# Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
+        # ------------------------------------------------------------------------------------
+        # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-		data = _cursor.fetchall()
-		return data
+        data = _cursor.fetchall()
+        return data
 
     def q2(self):
         _cursor = self.conn.cursor()
@@ -254,6 +261,7 @@ class DbStreamer:
 
 
 if __name__ == "__main__":
+    ## ToDO: Init the DbStreamer object
+    db_streamer = None
 
-    ## TODO: Initialize the DbStreamer object
-    db_streamer = DbStreamer()
+    print(db_streamer.q0())
