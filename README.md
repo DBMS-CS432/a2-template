@@ -9,8 +9,3 @@ conda create -n dbms2022 python=3.7
 ```
 conda activate dbm2022
 ```
-
-### Install dependencies 
-```
-pip install -r requirements.txt
-```
