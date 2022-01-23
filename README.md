@@ -9,3 +9,8 @@ conda create -n dbms2022 python=3.7
 ```
 conda activate dbm2022
 ```
+
+### Create the dir to log query outputs which will be autograded.
+```
+mkdir query_outputs
+```
