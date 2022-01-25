@@ -11,16 +11,12 @@ class DbStreamer:
 
 
     def __init__(self, host, user, password, database):
-        # TODO: Create the connection by replacing None with appropriate code.
-        #self.conn = None
         self.conn = MySQLdb.Connection(host=host,
                                        user=user,
                                        passwd=password,
                                        db=database,
                                        charset="utf8",
                                        use_unicode=True)
-        
-        # Do not modify code in this definition below this line.
         _cursor = self.conn.cursor()
         return
 
@@ -48,7 +44,7 @@ class DbStreamer:
         data = _cursor.fetchall()
         return data
 
-    # TODO: Add your logic for each of the questions in the corresponding methods provided below.
+    # TODO: Add your logic for each of the questions in the corresponding methods provided below. Each method should return a list of tuples/rows without the header.
     def q1(self):
         _cursor = self.conn.cursor()
 
@@ -60,7 +56,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q2(self):
@@ -74,7 +69,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q3(self):
@@ -88,7 +82,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q4(self):
@@ -102,7 +95,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q5(self):
@@ -116,7 +108,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q6(self):
@@ -130,7 +121,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q7(self):
@@ -144,7 +134,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q8(self):
@@ -158,7 +147,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q9(self):
@@ -172,7 +160,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q10(self):
@@ -186,7 +173,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q11(self):
@@ -200,7 +186,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q12(self):
@@ -214,7 +199,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q13(self):
@@ -228,7 +212,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q14(self):
@@ -242,7 +225,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
     def q15(self):
@@ -256,7 +238,6 @@ class DbStreamer:
         # ------------------------------------------------------------------------------------
         # Do not edit below this line, otherwise the autograder won't be able to evaluate your code.
 
-        data = _cursor.fetchall()
         return data
 
 
