@@ -11,10 +11,13 @@ if __name__ == "__main__":
     attrs = (getattr(db_streamer, name) for name in dir(db_streamer))
     methods = filter(inspect.ismethod, attrs)
     for q_method in methods:
-        if q_method.__name__.startswith('q'):
-            print(q_method.__name__)
-            with open('query_outputs/{}.txt'.format(q_method.__name__), 'w') as f:
-                data_row_list = DbStreamer.get_rows(q_method())
-                for row in data_row_list:
-                    f.write(str(row))
-                    f.write("\n")
+        try:
+            if q_method.__name__.startswith('q'):
+                print(q_method.__name__)
+                with open('query_outputs/{}.txt'.format(q_method.__name__), 'w') as f:
+                    data_row_list = DbStreamer.get_rows(q_method())
+                    for row in data_row_list:
+                        f.write(str(row))
+                        f.write("\n")
+        except Exception:
+            pass
